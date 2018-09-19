@@ -1,5 +1,8 @@
 #include <stdio.h>
-#include "lab2.h"
+
+void print_array(double *x, int length);
+void scan_array(double *x, int length);
+void reciprocal(double *x, int length);
 
 int main(void){
 	double array[10];
