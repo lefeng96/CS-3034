@@ -4,7 +4,6 @@
 #include "linked_list.h"
 #include "monster_attack.h"
 #include "linked_list_demo.h"
-#include "lab3.h"
 
 void show_menu()
 {
