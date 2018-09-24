@@ -1,6 +1,5 @@
 #ifndef LINKED_LIST
 #define LINKED_LIST
-#include "lab3.h"
 
 
 typedef struct node

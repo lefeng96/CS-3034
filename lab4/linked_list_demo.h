@@ -210,8 +210,12 @@ node* remove_any(node* head,node* nd)
 */
 void display(node* n)
 {
-    if(n != NULL)
-        printf("%d ", n->data);
+    if(n != NULL){
+    printf("Attack ID: %d", n->data->id);
+		printf(", Monster Name: %s", n->data->name);
+		printf(", Location of Attack: %s", n->data->location);
+		printf(", Number of Victims: %d\n", n->data->num_victims);
+	}
 }
 
 /*
@@ -220,14 +224,15 @@ void display(node* n)
     return the first matched node that stores the input data,
     otherwise return NULL
 */
-node* search(node* head,struct monster *data)
+node* search(node* head, struct monster *data)
 {
 
     node *cursor = head;
     while(cursor!=NULL)
     {
-        if(cursor->data == data)
-            return cursor;
+        if(cursor->data->id == data){
+          return cursor;
+        }
         cursor = cursor->next;
     }
     return NULL;

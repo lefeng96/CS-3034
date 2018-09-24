@@ -1,6 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "linked_list.h"
 #include "monster_attack.h"
+#include "linked_list_demo.h"
+#include "lab3.h"
 
 void show_menu()
 {
@@ -35,32 +39,33 @@ int main()
         switch(command)
         {
         case 1:
-            printf("Please enter a number to prepend: ");
+            printf("Please enter a monster attack to prepend: ");
             user_attacks(&data);
             head = prepend(head,data);
             traverse(head);
             break;
         case 2:
-            printf("Please enter a number to append: ");
+            printf("Please enter a monster attack to append: ");
             user_attacks(&data);
             head = append(head,data);
             traverse(head);
             break;
         case 3:
-            printf("Please enter a number to search: ");
+            printf("Please enter an ID to search: ");
             scanf("%d",&id);
             tmp = search(head,id);
             if(tmp != NULL)
             {
-                printf("Element with value %d found.",data);
+                printf("Monster with ID found. /n",data);
+                display(tmp);
             }
             else
             {
-                printf("Element with value %d not found.",data);
+                printf("Monster with ID not found.",data);
             }
             break;
         case 4:
-            printf("Enter the element value after which you would like to insert the new value: ");
+            printf("Enter the monter ID after which you would like to insert the new value: ");
             scanf("%d",&id);
             tmp = search(head,id);
             if(tmp != NULL)
@@ -77,7 +82,7 @@ int main()
             }
             break;
         case 5:
-            printf("Enter the element value before which you would like to insert a new value: ");
+            printf("Enter the monster ID before which you would like to insert a new value: ");
             scanf("%d",&data);
             tmp = search(head,data);
             if(tmp != NULL)
@@ -91,7 +96,7 @@ int main()
             }
             else
             {
-                printf("Element with value %d not found.",data);
+                printf("Monster ID %d not found.",data);
             }
             break;
         case 6:
@@ -105,7 +110,7 @@ int main()
                 traverse(head);
             break;
         case 8:
-            printf("Enter the element value to remove: ");
+            printf("Enter the monster ID to remove: ");
             scanf("%d",&data);
             tmp = search(head,data);
             if(tmp != NULL)
@@ -116,7 +121,7 @@ int main()
             }
             else
             {
-                printf("Element with value %d not found.",data);
+                printf("Monster ID %d not found.",data);
             }
             break;
         case 9:
