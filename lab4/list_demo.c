@@ -56,12 +56,12 @@ int main()
             tmp = search(head,id);
             if(tmp != NULL)
             {
-                printf("Monster with ID found. /n",data);
+                printf("Monster with ID %d found. \n",id);
                 display(tmp);
             }
             else
             {
-                printf("Monster with ID not found.",data);
+                printf("Monster with ID %d not found.",id);
             }
             break;
         case 4:
@@ -78,25 +78,25 @@ int main()
             }
             else
             {
-                printf("Element with value %d not found.",data);
+                printf("Monster with ID %d not found.",id);
             }
             break;
         case 5:
             printf("Enter the monster ID before which you would like to insert a new value: ");
-            scanf("%d",&data);
-            tmp = search(head,data);
+            scanf("%d",&id);
+            tmp = search(head,id);
             if(tmp != NULL)
             {
                 printf("Enter the value to insert: ");
-                user_attacks(&data);
-                head = insert_before(head,data,tmp);
+                user_attacks(&id);
+                head = insert_before(head,id,tmp);
 
                 if(head != NULL)
                     traverse(head);
             }
             else
             {
-                printf("Monster ID %d not found.",data);
+                printf("Monster ID not found.",id);
             }
             break;
         case 6:
@@ -111,8 +111,8 @@ int main()
             break;
         case 8:
             printf("Enter the monster ID to remove: ");
-            scanf("%d",&data);
-            tmp = search(head,data);
+            scanf("%d",&id);
+            tmp = search(head,id);
             if(tmp != NULL)
             {
                 remove_any(head,tmp);
@@ -121,7 +121,7 @@ int main()
             }
             else
             {
-                printf("Monster ID %d not found.",data);
+                printf("Monster ID %d not found.",id);
             }
             break;
         case 9:
