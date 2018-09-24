@@ -1,20 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-
-struct monster{
-	int id;
-	char name[15];
-	char location[20];
-	int num_victims;
-};
-
-int user_attacks(struct monster **curr_monster);
-
-void attacks(struct monster *curr, int length);
-
-void victims(struct monster *curr, int length);
+#include "lab3.h"
 
 int main(void){
   int length;
