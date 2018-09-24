@@ -10,9 +10,9 @@ struct monster{
 	int num_victims;
 };
 
-int user_attacks(struct monster **curr_monster);
+void user_attacks(struct monster **curr_monster);
 
-int user_attacks(struct monster **curr_monster){
+void user_attacks(struct monster **curr_monster){
 	int id = 0;
 	char name[15] = "";
 	char location[20] = "";

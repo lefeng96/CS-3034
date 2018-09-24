@@ -224,7 +224,7 @@ void display(node* n)
     return the first matched node that stores the input data,
     otherwise return NULL
 */
-node* search(node* head, struct monster *data)
+node* search(node* head, int data)
 {
 
     node *cursor = head;

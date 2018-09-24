@@ -53,7 +53,7 @@ node* remove_any(node* head,node* nd);
     display a node
 */
 void display(node* n);
-node* search(node* head,struct monster *data);
+node* search(node* head,int data);
 
 /*
     remove all element of the list

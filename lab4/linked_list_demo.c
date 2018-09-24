@@ -87,15 +87,15 @@ int main()
             if(tmp != NULL)
             {
                 printf("Enter the value to insert: ");
-                user_attacks(&id);
-                head = insert_before(head,id,tmp);
+                user_attacks(&data);
+                head = insert_before(head,data,tmp);
 
                 if(head != NULL)
                     traverse(head);
             }
             else
             {
-                printf("Monster ID not found.",id);
+                printf("Monster ID %d not found.",id);
             }
             break;
         case 6:
