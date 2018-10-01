@@ -61,7 +61,7 @@ int main(int argc, char const *argv[]) {
   int *(*id)(void *ptr);
   void *data;
 
-  printf("Choose 'm' for monsters or 's' for savings account");
+  printf("Choose 'm' for monsters or 's' for savings account\n");
   choice = (char) getchar();
   clean_stdin();
   if (choice == 'm') {
