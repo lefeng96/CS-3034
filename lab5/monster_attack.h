@@ -1,40 +1,46 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct monster {
+  int id;
+  char location[20];
+  char name[20];
+  int num_victims;
+} monster;
 
-struct monster{
-	int id;
-	char name[15];
-	char location[20];
-	int num_victims;
-};
+monster *create_monster(monster *data, int counter);
 
-void user_attacks(struct monster **curr_monster);
+void print_monster(monster *monster);
 
-void user_attacks(struct monster **curr_monster){
-	int id = 0;
-	char name[15] = "";
-	char location[20] = "";
-	int num_victims = 0;
-	struct monster *attacks = (struct monster *)malloc(sizeof(struct monster));
-	*curr_monster = attacks;
-	printf("What is the ID for this attack?\n");
-	scanf("%d", &id);
-	(*curr_monster)->id = id;
+int getMonsterId(monster *monster, int n);
 
-		printf("What is the name of the monster\n");
-		scanf("%s", name);
 
-		strcpy((*curr_monster)->name, name);
+monster *create_monster(monster *data, int counter) {
 
-		printf("Where was the taken place?.\n");
-		scanf("%s", location);
+  data = (monster *) malloc(25 * sizeof(monster));
 
-		strcpy((*curr_monster)->location, location);
+  data->id = counter;
 
-		printf("How many victims were there in the attack?.\n");
-		scanf("%d", &num_victims);
-		(*curr_monster)->num_victims = num_victims;
-			*curr_monster = attacks;
-	}
+  printf("\nEnter data about Monster #%i\n", data->id);
+  printf("Where was the attack taken place?.\n");
+  fgets(data->location, sizeof(data->location), stdin);
+  printf("What is the name of the monster\n");
+  fgets(data->name, sizeof(data->name), stdin);
+	printf("How many victims were there in the attack?.\n");
+  scanf("%i", &data->num_victims);
+  clean_stdin();
+  return data;
+}
+
+void print_monster(monster *data) {
+  printf("\nMonster ID: %i\n", data->id);
+  printf("Monster name: %s\n", data->name);
+  printf("Attack location: %s\n", data->location);
+  printf("Number of victims: %i\n", data->num_victims);
+}
+
+int getMonsterId(monster *monster, int search) {
+  return monster[search].id;
+}
