@@ -1,7 +1,3 @@
-//
-// Created by Kevin Tong on 4/10/2017.
-//
-
 #include <iostream>
 #include <unistd.h>
 #include "payrollSystem.h"

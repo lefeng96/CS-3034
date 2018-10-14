@@ -1,7 +1,3 @@
-//
-// Created by Kevin Tong on 4/10/2017.
-//
-
 #include <iostream>
 #include <sstream>
 #include <iomanip>
@@ -16,8 +12,6 @@ Paycheck::Paycheck(string id, string firstName, string lastName, double paycheck
       paycheckAmount(paycheckAmount) {}
 
 Paycheck::Paycheck() = default;
-
-// e.g. Paycheck for $666.75 issued to Jerry Jones, employee # E12345
 
 string Paycheck::getPaycheck(const string &id, const string &firstName, const string &lastName, double paycheckAmount) {
 

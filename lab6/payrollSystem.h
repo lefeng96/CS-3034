@@ -1,7 +1,6 @@
 #ifndef PAYROLLSYSTEM
 #define PAYROLLSYSTEM
 
-
 #include <vector>
 #include "employee.h"
 

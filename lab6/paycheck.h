@@ -1,7 +1,3 @@
-//
-// Created by Kevin Tong on 4/10/2017.
-//
-
 #ifndef PAYCHECK
 #define PAYCHECK
 
@@ -16,10 +12,6 @@ public:
   Paycheck(string id, string firstName, string lastName, double paycheckAmount);
 
   Paycheck();
-
-  /**
-   * Getters and setters
-   **/
 
   string getPaycheck(const string &id, const string &firstName, const string &lastName, double paycheckAmount);
 
