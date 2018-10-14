@@ -7,7 +7,7 @@
 /*
     create a new node
     initialize the data and next field
- 
+
     return the newly created node
 */
 node *create(void *data, node *next) {
@@ -18,7 +18,7 @@ node *create(void *data, node *next) {
   }
   new_node->data = data;
   new_node->next = next;
-  
+
   return new_node;
 }
 
@@ -41,7 +41,7 @@ node *append(node *head, void *data) {
     node *cursor = head;
     while (cursor->next != NULL)
       cursor = cursor->next;
-    
+
     /* create a new node */
     node *new_node = create(data, NULL);
     cursor->next = new_node;
@@ -59,7 +59,7 @@ node *insert_after(node *head, void *data, node *prev) {
   node *cursor = head;
   while (cursor != prev)
     cursor = cursor->next;
-  
+
   if (cursor != NULL) {
     node *new_node = create(data, cursor->next);
     cursor->next = new_node;
@@ -75,12 +75,12 @@ node *insert_after(node *head, void *data, node *prev) {
 node *insert_before(node *head, void *data, node *nxt) {
   if (nxt == NULL || head == NULL)
     return NULL;
-  
+
   if (head == nxt) {
     head = prepend(head, data);
     return head;
   }
-  
+
   /* find the prev node, starting from the first node*/
   node *cursor = head;
   while (cursor != NULL) {
@@ -88,7 +88,7 @@ node *insert_before(node *head, void *data, node *nxt) {
       break;
     cursor = cursor->next;
   }
-  
+
   if (cursor != NULL) {
     node *new_node = create(data, cursor->next);
     cursor->next = new_node;
@@ -132,23 +132,23 @@ node *remove_front(node *head) {
 node *remove_back(node *head) {
   if (head == NULL)
     return NULL;
-  
+
   node *cursor = head;
   node *back = NULL;
   while (cursor->next != NULL) {
     back = cursor;
     cursor = cursor->next;
   }
-  
+
   if (back != NULL)
     back->next = NULL;
-  
+
   /* if this is the last node in the list*/
   if (cursor == head)
     head = NULL;
-  
+
   free(cursor);
-  
+
   return head;
 }
 
@@ -161,11 +161,11 @@ node *remove_any(node *head, node *nd) {
   /* if the node is the first node */
   if (nd == head)
     return remove_front(head);
-  
+
   /* if the node is the last node */
   if (nd->next == NULL)
     return remove_back(head);
-  
+
   /* if the node is in the middle */
   node *cursor = head;
   while (cursor != NULL) {
@@ -173,7 +173,7 @@ node *remove_any(node *head, node *nd) {
       break;
     cursor = cursor->next;
   }
-  
+
   if (cursor != NULL) {
     node *tmp = cursor->next;
     cursor->next = tmp->next;
@@ -181,7 +181,7 @@ node *remove_any(node *head, node *nd) {
     free(tmp);
   }
   return head;
-  
+
 }
 
 /*
@@ -195,12 +195,12 @@ void display(node *n, void *(*print)(void *ptr)) {
 
 /*
     Search for a specific node with input data
- 
+
     return the first matched node that stores the input data,
     otherwise return NULL
 */
 node *search(node *head, int searchId, int *(*id)(void *ptr)) {
-  
+
   node *cursor = head;
   while (cursor != NULL) {
     if (searchId == id(cursor->data)) {
@@ -216,7 +216,7 @@ node *search(node *head, int searchId, int *(*id)(void *ptr)) {
 */
 void clear(node *head) {
   node *cursor, *tmp;
-  
+
   if (head != NULL) {
     cursor = head->next;
     head->next = NULL;
@@ -248,7 +248,7 @@ node *insertion_sort(node *head) {
   node *x, *y, *e;
   x = head;
   head = NULL;
-  
+
   while (x != NULL) {
     e = x;
     x = x->next;

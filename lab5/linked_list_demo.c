@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "monster_attack.h"
-#include "linked_list_demo.h"
-#include "linked_list.h"
 #include "savings_accounts.h"
-
-void clean_stdin();
+#include "linked_list.h"
 
 void clean_stdin() {
   int c;
