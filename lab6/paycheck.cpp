@@ -19,8 +19,7 @@ string Paycheck::getPaycheck(const string &id, const string &firstName, const st
   stream << fixed << setprecision(2) << paycheckAmount;
   string check = stream.str();
 
-  return "Employee #" + id + ": Paycheck issued for $" + check + ". Paid to the order of: " + firstName + " " +
-         lastName + "\n";
+  return "Employee #" + id + ": Paycheck for $" + check + ". Issued to " + firstName + " " + lastName + "\n";
 }
 
 double Paycheck::getPaycheckAmount() const {
