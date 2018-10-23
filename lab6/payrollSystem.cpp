@@ -3,12 +3,12 @@
 #include "paycheck.h"
 using namespace std;
 
-void PayrollSystem::addEmployee(string id, string firstName, string lastName, double wage, int hours) {
+void PayrollSystem::add(string id, string firstName, string lastName, double wage, int hours) {
   Employee newEmployee(move(id), move(firstName), move(lastName), wage, hours);
   PayrollSystem::employees.push_back(newEmployee);
 }
-void PayrollSystem::findAndErase(string id) {
-   int counter = 0;  for (const auto &i : PayrollSystem::employees) {
+void PayrollSystem::del(string id) {
+   int counter = 0;  for (auto &i : PayrollSystem::employees) {
     if (id == i.getId()) {
           PayrollSystem::employees.erase(PayrollSystem::employees.begin() + counter);
           break;
@@ -16,14 +16,14 @@ void PayrollSystem::addEmployee(string id, string firstName, string lastName, do
     counter++;
   }
 }
-void PayrollSystem::issuePaycheck() {
+void PayrollSystem::payRoll() {
   Employee employee;  Paycheck paycheck;
   for (const auto &i : PayrollSystem::employees) {
-        double pay = employee.calcPay(i.getWage(), i.getHours());
+        double pay = employee.pay(i.getWage(), i.getHours());
         cout << paycheck.getPaycheck(i.getId(), i.getFirstName(), i.getLastName(), pay);
         }
       }
-void PayrollSystem::recordHours(string id, int hours) {
+void PayrollSystem::hours(string id, int hours) {
   for (auto &i : PayrollSystem::employees) {
     if (id == i.getId()) {
                   i.setHours(hours);

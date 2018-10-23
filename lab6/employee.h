@@ -12,11 +12,7 @@ public:
 
   Employee();
 
-  double calcPay(double wage, int hours);
-
-  /**
-   * Getters and setters
-   **/
+  double pay(double wage, int hours);
 
   const string &getId() const;
 

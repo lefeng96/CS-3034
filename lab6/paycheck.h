@@ -9,15 +9,15 @@ using namespace std;
 class Paycheck {
 
 public:
-  Paycheck(string id, string firstName, string lastName, double paycheckAmount);
+  Paycheck(string id, string firstName, string lastName, double paycheck);
 
   Paycheck();
 
-  string getPaycheck(const string &id, const string &firstName, const string &lastName, double paycheckAmount);
+  string getPaycheck(const string &id, const string &firstName, const string &lastName, double paycheck);
 
-  double getPaycheckAmount() const;
+  double getPaycheck() const;
 
-  void setPaycheckAmount(double paycheckAmount);
+  void setPaycheck(double paycheck);
 
   const string &getId() const;
 
@@ -35,7 +35,7 @@ private:
   string id;
   string firstName;
   string lastName;
-  double paycheckAmount;
+  double paycheck;
 };
 
 

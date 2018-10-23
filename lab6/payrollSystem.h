@@ -7,13 +7,13 @@
 class PayrollSystem {
 
 public:
-  void addEmployee(string id, string firstName, string lastName, double wage, int hours);
+  void add(string id, string firstName, string lastName, double wage, int hours);
 
-  void findAndErase(string id);
+  void del(string id);
 
-  void recordHours(string id, int hours);
+  void hours(string id, int hours);
 
-  void issuePaycheck();
+  void payRoll();
 
   vector<Employee> employees;
 

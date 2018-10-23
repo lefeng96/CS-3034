@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "employee.h"
 
@@ -13,7 +12,7 @@ Employee::Employee(string id, string firstName, string lastName, double wage, in
       wage(wage),
       hours(hours) {}
 
-double Employee::calcPay(double wage, int hours) {
+double Employee::pay(double wage, int hours) {
 
   double totalPay = wage * hours;
 
